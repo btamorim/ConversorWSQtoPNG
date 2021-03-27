@@ -99,7 +99,7 @@ class converterWSQ(Resource):
         if request.method == "POST":
             data = json.loads(request.data) 
 
-        return converterWSQtoPNG(data['img'],1)
+        return {"img": converterWSQtoPNG(data['img'],1)}
 
 @api.route('/converterWSQlist', methods=["POST"])
 @api.doc( description="Função que recebe uma lista de WSQ em base64 e converte em PNG")
@@ -128,7 +128,7 @@ class converterWSQ90(Resource):
         if request.method == "POST":
             data = json.loads(request.data)
             
-        return converterWSQtoPNG90(data['img'],1)
+        return {"img": converterWSQtoPNG90(data['img'],1)} 
 
 
 @api.route('/removeFundo', methods=["POST"])
